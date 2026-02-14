@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rovex Automation | Future of Smart Living</title>
+    <meta name="description"
+        content="Experience intelligent automation, AI-powered security, and seamless control designed for modern living with Rovex Automation.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Intro Screen -->
+    <div id="intro-screen">
+        <div class="glitter-container">
+            <img src="assets/revoxl.webp" alt="Rovex Intro Logo" class="intro-logo">
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">
+                <img src="assets/revoxl.webp" alt="Rovex Automation" id="nav-logo-img" style="opacity: 0;">
+            </a>
+
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#solutions" class="nav-link">Solutions</a></li>
+                <li class="nav-item"><a href="#clients" class="nav-link">Clients</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item">
+                    <a href="#contact" class="btn btn-primary nav-btn">Get Quote</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-bg"></div> <!-- Background Image via CSS -->
+
+
+        <div class="container hero-content hero-entrance">
+            <span class="subtitle">Smart Home. Smart Security. Smart Living.</span>
+            <h1 class="hero-title">Welcome to the <br><span class="text-gradient">New Era of Automation</span></h1>
+            <p class="hero-description">
+                Experience intelligent automation, AI-powered security, and seamless control designed for modern living.
+                Elevate your lifestyle with Rovex.
+            </p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn btn-primary glow-effect">Explore Services</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+
+        <a href="#about" class="scroll-down">
+            <div class="mouse"></div>
+        </a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container about-container">
+            <div class="about-image reveal-left">
+                <div class="image-wrapper glass-card">
+                    <img src="https://source.unsplash.com/featured/?smart-home,automation" alt="Smart Home Automation">
+                    <div class="experience-badge">
+                        <span class="years">10+</span>
+                        <span class="text">Years of<br>Excellence</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-text reveal-right">
+                <span class="section-subtitle">Who We Are</span>
+                <h2 class="section-title">Redefining <span class="accent">Smart Living</span></h2>
+                <p>
+                    At Rovex Automation, we don't just install devices; we engineer ecosystems. We are pioneers in
+                    integrating cutting-edge AI security, robust networking, and intuitive home automation to create
+                    spaces that think for themselves.
+                </p>
+                <p>
+                    Our mission is to seamlessly blend technology into your daily life, providing comfort, security, and
+                    efficiency without complexity. From luxury residences to corporate headquarters, Rovex delivers the
+                    future, today.
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Smart Homes</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">99%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">AI Monitoring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="section-header text-center reveal-bottom">
+                <span class="section-subtitle">Our Expertise</span>
+                <h2 class="section-title">Premium <span class="accent">Services</span></h2>
+                <p class="section-desc">Comprehensive solutions tailored for luxury and performance.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Service Cards -->
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 100ms;" id="smart-home-card"
+                    onclick="toggleSmartHomeDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Smart Home</h3>
+                        <p>Complete control over lighting, climate, and entertainment with voice or app.</p>
+                    </div>
+                    <div class="service-details" id="smart-home-details" style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Wireless Automation</h4>
+                                <p>Flexible, Smart, and Effortless. Manage everything through a central control panel or
+                                    your
+                                    smartphone- perfect for existing homes and easy upgrades without rewiring.</p>
+
+                                <h4>Wired Automation</h4>
+                                <p>Stable, Reliable, and Seamless. Connects all appliances through a dedicated network,
+                                    ensuring
+                                    seamless operation with minimal interference- ideal for new constructions or
+                                    high-end
+                                    automation needs.</p>
+
+                                <h4>Presence Sensors</h4>
+                                <p>Intelligent, Adaptive, and Energy-Efficient. These intelligent sensors add another
+                                    layer of
+                                    convenience, detecting movement to automatically adjust lighting, climate, and
+                                    security
+                                    settings.</p>
+
+                                <button class="btn btn-secondary"
+                                    onclick="event.stopPropagation(); toggleSmartHomeDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="assets/smarthome.jpg" alt="Smart Home Automation" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 200ms;" id="cctv-card"
+                    onclick="toggleCCTVDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>AI CCTV Systems</h3>
+                        <p>Advanced surveillance with facial recognition and real-time threat detection.</p>
+                    </div>
+                    <div class="service-details" id="cctv-details" style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Advanced Facial Recognition</h4>
+                                <p>Instantly identify authorized personnel and flag strangers with high-precision AI,
+                                    ensuring only the right people have access.</p>
+
+                                <h4>Smart Threat Detection</h4>
+                                <p>Go beyond simple motion detection. Our AI analyzes behavior to detect loitering,
+                                    intrusion, and suspicious activities in real-time.</p>
+
+                                <h4>Night Vision & Cloud Sync</h4>
+                                <p>Crystal clear recording even in total darkness, with secure cloud backups so you
+                                    never lose critical footage.</p>
+
+                                <button class="btn btn-secondary" onclick="event.stopPropagation(); toggleCCTVDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="assets/camera.jpg" alt="AI CCTV Camera" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 300ms;"
+                    id="access-control-card" onclick="toggleAccessControlDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-fingerprint"></i>
+                        </div>
+                        <h3>Access Control</h3>
+                        <p>Biometric and card-based entry systems for maximum security.</p>
+                    </div>
+                    <div class="service-details" id="access-control-details"
+                        style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Face Recognized Access Control</h4>
+                                <p>No more keycards or PIN codes. Experience the next level of security with Face
+                                    Recognized Access Control, offering fast, touchless, and highly accurate
+                                    authentication. It uses advanced AI to instantly identify users with high security
+                                    and precision.</p>
+
+                                <h4>Multilayer Security</h4>
+                                <p>For added protection, the system offers optional multilayer security with RFID, PIN
+                                    and biometric verification, ensuring only authorized personnel gain entry.</p>
+
+                                <h4>Entry & Exit Logs</h4>
+                                <p>Allows you to keep a detailed record of entry and exit, making it ideal for offices,
+                                    residences, and high-security areas requiring strict monitoring.</p>
+
+                                <button class="btn btn-secondary"
+                                    onclick="event.stopPropagation(); toggleAccessControlDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="https://source.unsplash.com/featured/?biometric,security"
+                                    alt="Access Control System" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 400ms;" id="smart-lock-card"
+                    onclick="toggleSmartLockDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h3>Digital Door Locks</h3>
+                        <p>Keyless entry solutions combining style and impregnable security.</p>
+                    </div>
+                    <div class="service-details" id="smart-lock-details" style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>AI-Powered Smart Entry</h4>
+                                <p>Say goodbye to keys and step into the future of home security with our AI-powered
+                                    Digital Smart Door Lock. Unlock your door with Fast Fingerprint Sensor, RFID Card,
+                                    PIN Code, or Face Lock.</p>
+
+                                <h4>Built-in Camera & Display</h4>
+                                <p>View your visitors directly through the built-in camera and display screen inside
+                                    your home. Experience enhanced security with an auto-locking system and optional VDP
+                                    integration for easy visitor management.</p>
+
+                                <h4>Smart Monitoring & Alerts</h4>
+                                <p>The system tracks your access history and offers low battery indication and emergency
+                                    power backup, while the fine-touch keypad and doorbell ensure convenient
+                                    interaction.</p>
+
+                                <button class="btn btn-secondary"
+                                    onclick="event.stopPropagation(); toggleSmartLockDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="https://source.unsplash.com/featured/?smart-lock,door"
+                                    alt="Digital Smart Door Lock" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 500ms;"
+                    id="gate-automation-card" onclick="toggleGateAutomationDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-torii-gate"></i>
+                        </div>
+                        <h3>Gate Automation</h3>
+                        <p>Smooth, silent, and reliable automatic gate systems.</p>
+                    </div>
+                    <div class="service-details" id="gate-automation-details"
+                        style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Seamless Entry</h4>
+                                <p>Imagine pulling up to your home and your gate opens automatically-no buttons, no
+                                    waiting. Experience true convenience and luxury every time you arrive.</p>
+
+                                <h4>Universal Compatibility</h4>
+                                <p>Whether it's a sliding or swing gate, our advanced Gate Automation System ensures
+                                    smooth, automated operation tailored to your specific entrance.</p>
+
+                                <h4>Smart & Secure</h4>
+                                <p>Integrated with smart access controls, you can manage entry permissions remotely and
+                                    ensure your property remains secure at all times.</p>
+
+                                <button class="btn btn-secondary"
+                                    onclick="event.stopPropagation(); toggleGateAutomationDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="https://source.unsplash.com/featured/?automatic-gate,entrance"
+                                    alt="Automatic Gate" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 600ms;" id="vdp-card"
+                    onclick="toggleVDPDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <h3>Video Door Phone System</h3>
+                        <p>See and speak to visitors from anywhere in the world.</p>
+                    </div>
+                    <div class="service-details" id="vdp-details" style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Global Connectivity</h4>
+                                <p>See who's at your door from anywhere. With remote access, real-time monitoring, and
+                                    two-way communication, you can greet visitors, grant access, or secure your premises
+                                    effortlessly - whether you're at home, in the office, or on the go.</p>
+
+                                <h4>Advanced SIP Technology</h4>
+                                <p>Our Video Door System (VDP) is built on SIP technology, which means you get to
+                                    experience crystal-clear video and audio over IP networks.</p>
+
+                                <h4>Seamless Integration</h4>
+                                <p>SIP enables smooth integration with intercoms, smartphones, and security systems,
+                                    creating a unified communication channel for your smart home.</p>
+
+                                <button class="btn btn-secondary" onclick="event.stopPropagation(); toggleVDPDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="https://source.unsplash.com/featured/?video-intercom,doorbell"
+                                    alt="Video Door Phone" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 700ms;"
+                    id="intrusion-alarm-card" onclick="toggleIntrusionDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h3>Intrusion Alarms</h3>
+                        <p>Instant alerts and police dispatch integration for peace of mind.</p>
+                    </div>
+                    <div class="service-details" id="intrusion-alarm-details"
+                        style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Smart Threat Detection</h4>
+                                <p>Imagine a security system that not only detects threats but thinks before it reacts.
+                                    Our AXHub AI-powered intrusion alarm analyzes threats before sending real-time
+                                    alerts.</p>
+
+                                <h4>Intelligent Accuracy</h4>
+                                <p>It uses advanced AI to distinguish real dangers from harmless threats, thereby
+                                    minimizing false alarms.</p>
+
+                                <h4>IVaaS Verification</h4>
+                                <p>With IVaaS (Intrusion Verification as a Service), you can remotely view live footage
+                                    and take action instantly. More than just an alarm—you get a security system that's
+                                    always thinking ahead.</p>
+
+                                <button class="btn btn-secondary"
+                                    onclick="event.stopPropagation(); toggleIntrusionDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="https://source.unsplash.com/featured/?security-alarm,siren"
+                                    alt="Intrusion Alarm System" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 800ms;" id="networking-card"
+                    onclick="toggleNetworkingDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h3>Networking & WiFi</h3>
+                        <p>Enterprise-grade mesh networks ensuring zero dead zones.</p>
+                    </div>
+                    <div class="service-details" id="networking-details" style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Uninterrupted Connectivity</h4>
+                                <p>No downtime. No connectivity issues. Experience a seamless digital environment where
+                                    your connection is always on.</p>
+
+                                <h4>Peak Business Efficiency</h4>
+                                <p>Our infrastructure is expertly designed to keep your business running at peak
+                                    efficiency, ensuring that your operations never miss a beat.</p>
+
+                                <h4>Secure & Scalable</h4>
+                                <p>With high-speed connectivity, robust security, and seamless scalability, we provide a
+                                    network that grows with your needs for uninterrupted operations.</p>
+
+                                <button class="btn btn-secondary"
+                                    onclick="event.stopPropagation(); toggleNetworkingDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="https://source.unsplash.com/featured/?server-room,network"
+                                    alt="Networking Infrastructure" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 900ms;" id="curtain-card"
+                    onclick="toggleCurtainDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-window-maximize"></i>
+                        </div>
+                        <h3>Curtain and Blinds Automation</h3>
+                        <p>Automated shading solutions for energy efficiency and privacy.</p>
+                    </div>
+                    <div class="service-details" id="curtain-details" style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Effortless Control</h4>
+                                <p>Effortlessly adjust your curtains and blinds with the touch of a button, bringing
+                                    convenience and elegance to your living space.</p>
+
+                                <h4>Smooth Operation</h4>
+                                <p>Our Curtain and Blinds Automation system is designed for smooth, stable operation in
+                                    both manual and remote modes, ensuring perfect lighting control.</p>
+
+                                <h4>Safety & Durability</h4>
+                                <p>With overload protection and an automatic stroke design, the system provides enhanced
+                                    safety and long-lasting durability for your home infrastructure.</p>
+
+                                <button class="btn btn-secondary"
+                                    onclick="event.stopPropagation(); toggleCurtainDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="https://source.unsplash.com/featured/?modern-curtains,blinds"
+                                    alt="Curtain Automation" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 1000ms;" id="shutter-card"
+                    onclick="toggleShutterDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-warehouse"></i>
+                        </div>
+                        <h3>Smart Shutter Automation</h3>
+                        <p>Intelligent control for rolling shutters, enhancing security and convenience.</p>
+                    </div>
+                    <div class="service-details" id="shutter-details" style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Remote & Manual Control</h4>
+                                <p>No more struggling with manual locks or keys. Upgrade your shutters with intelligent
+                                    automation and control it remotely with a key switch, Wi-Fi module, or GSM module -
+                                    anytime, anywhere.</p>
+
+                                <h4>Advanced Safety Features</h4>
+                                <p>Our Smart Shutter Automation is equipped with a safety brake to prevent sudden drops,
+                                    ensuring the highest level of operational safety for your property.</p>
+
+                                <h4>Instant Security Alerts</h4>
+                                <p>The system features an alarm flash lamp for immediate alerts in case of unauthorized
+                                    access. Smart, secure, and stress-free - that's the future of shutter automation!
+                                </p>
+
+                                <button class="btn btn-secondary"
+                                    onclick="event.stopPropagation(); toggleShutterDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="https://source.unsplash.com/featured/?rolling-shutter,garage"
+                                    alt="Smart Shutter Automation" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 1100ms;"
+                    id="boom-barrier-card" onclick="toggleBoomBarrierDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <h3>Automatic Boom Barrier</h3>
+                        <p>Secure vehicle access management for residential and commercial premises.</p>
+                    </div>
+                    <div class="service-details" id="boom-barrier-details" style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Efficient Vehicle Access</h4>
+                                <p>Our Automatic Boom Barrier ensures smooth, efficient, and secure access for vehicles.
+                                    It automates entry and exit effectively, reducing congestion and significantly
+                                    improving security for your premises.</p>
+
+                                <h4>Advanced Safety Systems</h4>
+                                <p>Equipped with a Loop Detector & Signal Light for accurate vehicle detection and
+                                    visual guidance. The Flash Lamp & Safety Alerts further enhance visibility during
+                                    operation to prevent accidents.</p>
+
+                                <h4>Versatile Control</h4>
+                                <p>Operate effortlessly using a key switch, push button, or remote access. Ideal for
+                                    residential complexes, commercial buildings, toll booths, and gated communities.</p>
+
+                                <button class="btn btn-secondary"
+                                    onclick="event.stopPropagation(); toggleBoomBarrierDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="https://source.unsplash.com/featured/?boom-barrier,parking"
+                                    alt="Automatic Boom Barrier" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 1200ms;" id="sprinkler-card"
+                    onclick="toggleSprinklerDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-faucet"></i>
+                        </div>
+                        <h3>Sprinkler Automation</h3>
+                        <p>Smart irrigation systems for effortless garden maintenance and water efficiency.</p>
+                    </div>
+                    <div class="service-details" id="sprinkler-details" style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Efficient Watering</h4>
+                                <p>No more over-watering or under-watering. Keep your landscape lush and healthy year
+                                    round, saving water, time and effort with precise automated schedules.</p>
+
+                                <h4>Smart Optimization</h4>
+                                <p>Optimize water usage based on soil moisture and real-time weather conditions,
+                                    ensuring your garden gets exactly what it needs, when it needs it.</p>
+
+                                <h4>Remote Control</h4>
+                                <p>Set watering timings and control everything remotely through your mobile, giving you
+                                    complete freedom to manage your garden from anywhere.</p>
+
+                                <button class="btn btn-secondary"
+                                    onclick="event.stopPropagation(); toggleSprinklerDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="https://source.unsplash.com/featured/?garden-sprinkler,irrigation"
+                                    alt="Smart Sprinkler System" class="service-img"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="section solutions">
+        <div class="container">
+            <div class="section-header text-center reveal-bottom">
+                <span class="section-subtitle">Integration</span>
+                <h2 class="section-title">Holistic <span class="accent">Solutions</span></h2>
+            </div>
+
+            <!-- Solution 1 -->
+            <div class="solution-row reveal-bottom">
+                <div class="solution-content">
+                    <h3>AI Security Ecosystem</h3>
+                    <p>By integrating CCTV, access control, and alarms, we create a unified security shield that
+                        proactively identifies and neutralizes threats before they happen.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check"></i> Facial Recognition</li>
+                        <li><i class="fas fa-check"></i> License Plate Reading</li>
+                        <li><i class="fas fa-check"></i> Automated Lockdown</li>
+                    </ul>
+                </div>
+                <div class="solution-image">
+                    <img src="https://source.unsplash.com/featured/?surveillance,cctv" alt="AI Security">
+                </div>
+            </div>
+
+            <!-- Solution 2 -->
+            <div class="solution-row reverse reveal-bottom">
+                <div class="solution-content">
+                    <h3>Seamless Home Control</h3>
+                    <p>Imagine your home anticipating your needs. Lights that adjust to the time of day, climate that
+                        prepares for your arrival, and music that follows you from room to room.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check"></i> Voice Control</li>
+                        <li><i class="fas fa-check"></i> Scene Automation</li>
+                        <li><i class="fas fa-check"></i> Energy Management</li>
+                    </ul>
+                </div>
+                <div class="solution-image">
+                    <img src="https://source.unsplash.com/featured/?home-automation,tablet" alt="Smart Control">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="section clients">
+        <div class="container">
+            <h2 class="section-title text-center reveal-bottom">Trusted by <span class="accent">Industry Leaders</span>
+            </h2>
+
+            <div class="carousel-container reveal-bottom">
+                <div class="carousel-track">
+                    <div class="client-logo">Nayara Energy</div>
+                    <div class="client-logo">HPCL</div>
+                    <div class="client-logo">Adani Gas</div>
+                    <div class="client-logo">SBI</div>
+                    <div class="client-logo">Jio Digital Life</div>
+                    <div class="client-logo">AJIO</div>
+                    <div class="client-logo">Fincare Bank</div>
+                    <div class="client-logo">AFMC</div>
+                    <div class="client-logo">ICICI Bank</div>
+                    <div class="client-logo">Asianet</div>
+                    <div class="client-logo">TCONE</div>
+                    <div class="client-logo">LuLu</div>
+                    <div class="client-logo">KSEB</div>
+                    <div class="client-logo">Emin</div>
+                    <div class="client-logo">Minar</div>
+                    <div class="client-logo">RG Foods</div>
+                    <div class="client-logo">Kar Jaan</div>
+                    <div class="client-logo">SAG Institute</div>
+                    <div class="client-logo">Co-operative College</div>
+                    <div class="client-logo">Farook College</div>
+                    <div class="client-logo">The Address</div>
+                    <div class="client-logo">Malabar Developers</div>
+                    <div class="client-logo">Indus Towers</div>
+                    <div class="client-logo">Xylem</div>
+                    <div class="client-logo">3K Qaly</div>
+                    <div class="client-logo">Cabriot</div>
+                    <div class="client-logo">APS</div>
+                    <div class="client-logo">Preethi</div>
+                    <div class="client-logo">KDGH</div>
+                    <div class="client-logo">Mesauda</div>
+                    <div class="client-logo">Kurikkal Ambiente</div>
+                    <div class="client-logo">The Raviz</div>
+                    <div class="client-logo">LIPI</div>
+                    <div class="client-logo">Yabh</div>
+                    <div class="client-logo">Kevabox</div>
+                    <div class="client-logo">G-TEC</div>
+
+                    <!-- Duplicate for seamless loop -->
+                    <div class="client-logo">Nayara Energy</div>
+                    <div class="client-logo">HPCL</div>
+                    <div class="client-logo">Adani Gas</div>
+                    <div class="client-logo">SBI</div>
+                    <div class="client-logo">Jio Digital Life</div>
+                    <div class="client-logo">AJIO</div>
+                    <div class="client-logo">Fincare Bank</div>
+                    <div class="client-logo">AFMC</div>
+                    <div class="client-logo">ICICI Bank</div>
+                    <div class="client-logo">Asianet</div>
+                    <div class="client-logo">TCONE</div>
+                    <div class="client-logo">LuLu</div>
+                    <div class="client-logo">KSEB</div>
+                    <div class="client-logo">Emin</div>
+                    <div class="client-logo">Minar</div>
+                    <div class="client-logo">RG Foods</div>
+                    <div class="client-logo">Kar Jaan</div>
+                    <div class="client-logo">SAG Institute</div>
+                    <div class="client-logo">Co-operative College</div>
+                    <div class="client-logo">Farook College</div>
+                    <div class="client-logo">The Address</div>
+                    <div class="client-logo">Malabar Developers</div>
+                    <div class="client-logo">Indus Towers</div>
+                    <div class="client-logo">Xylem</div>
+                    <div class="client-logo">3K Qaly</div>
+                    <div class="client-logo">Cabriot</div>
+                    <div class="client-logo">APS</div>
+                    <div class="client-logo">Preethi</div>
+                    <div class="client-logo">KDGH</div>
+                    <div class="client-logo">Mesauda</div>
+                    <div class="client-logo">Kurikkal Ambiente</div>
+                    <div class="client-logo">The Raviz</div>
+                    <div class="client-logo">LIPI</div>
+                    <div class="client-logo">Yabh</div>
+                    <div class="client-logo">Kevabox</div>
+                    <div class="client-logo">G-TEC</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="contact-wrapper glass-card reveal-bottom">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>Ready to transform your space? Contact us for a premium consultation.</p>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@rovexautomation.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>123 Innovation Drive, Tech City, CA</span>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <img src="assets/revoxl.webp" alt="Rovex Automation">
+                    </a>
+                    <p>Engineering the future of smart living and security.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-legal">
+                    <p>&copy; 2024 Rovex Automation. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
