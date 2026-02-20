@@ -7,13 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     const logoImg = document.getElementById('nav-logo-img');
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    // Navbar Scroll Effect - Handled via GSAP in main.jsx for stability with Lenis
 
     // Mobile Menu Toggle
     const mobileMenu = document.getElementById('mobile-menu');
@@ -36,15 +30,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Intersection Observer for Scroll Animations
     const observerOptions = {
         threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
+        rootMargin: "0px 0px -10% 0px" // Trigger earlier for smoother feel
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active-reveal');
-                entry.target.style.opacity = "1";
-                entry.target.style.transform = "translate(0, 0)";
+                // CSS handles the transition now for smoother performance
                 observer.unobserve(entry.target); // Animates only once
             }
         });
@@ -369,9 +362,17 @@ class ClickSpark {
         }));
 
         this.sparks.push(...newSparks);
+
+        // Restart animation if not running
+        if (!this.isRunning) {
+            this.isRunning = true;
+            requestAnimationFrame((t) => this.animate(t));
+        }
     }
 
     animate(timestamp) {
+        if (!this.isRunning) return;
+
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         this.sparks = this.sparks.filter(spark => {
@@ -399,7 +400,11 @@ class ClickSpark {
             return true;
         });
 
-        requestAnimationFrame((t) => this.animate(t));
+        if (this.sparks.length > 0) {
+            requestAnimationFrame((t) => this.animate(t));
+        } else {
+            this.isRunning = false;
+        }
     }
 }
 

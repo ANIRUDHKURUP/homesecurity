@@ -30,7 +30,7 @@
     <nav class="navbar" id="navbar">
         <div class="container navbar-container">
             <a href="#" class="logo">
-                <img src="assets/white logo.png" alt="Rovex Automation" id="nav-logo-img">
+                <img src="assets/white logo.png" alt="Rovex Automation" id="nav-logo-img" decoding="async">
             </a>
 
             <div class="menu-toggle" id="mobile-menu">
@@ -78,14 +78,37 @@
         <a href="#about" class="scroll-down">
             <div class="mouse"></div>
         </a>
-    </section>
 
+        <div id="card-swap-root"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5;">
+        </div>
+    </section>
+    <!-- PARALLAX CAMERA SCENE -->
+    <section class="parallax-scene camera-scene">
+
+        <div class="parallax-bg"></div>
+
+        <div class="parallax-content">
+
+            <img src="assets/smarthome.jpg" class="parallax-camera" decoding="async" />
+
+            <h2 class="parallax-title">
+                Rovex Automation. Engineered Intelligence.
+            </h2>
+
+            <p class="parallax-subtitle">
+                homes that think, adapt, and respond with uncompromising precision
+            </p>
+
+        </div>
+
+    </section>
     <!-- About Section -->
     <section id="about" class="section about">
         <div class="container about-container">
             <div class="about-image reveal-left">
                 <div class="image-wrapper glass-card">
-                    <img src="assets/smarthomeauto.png" alt="Smart Home Automation">
+                    <img src="assets/smarthomeauto.png" alt="Smart Home Automation" loading="lazy" decoding="async">
                     <div class="experience-badge">
                         <span class="years">10+</span>
                         <span class="text">Years of<br>Excellence</span>
@@ -174,6 +197,7 @@
                             </div>
                             <div class="details-image" style="margin-top: 2rem;">
                                 <img src="assets/smarthome.jpg" alt="Smart Home Automation" class="service-img"
+                                    loading="lazy" decoding="async"
                                     style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
                             </div>
                         </div>
@@ -290,6 +314,7 @@
                             </div>
                             <div class="details-image" style="margin-top: 2rem;">
                                 <img src="assets/doorlock.jpg" alt="Digital Smart Door Lock" class="service-img"
+                                    loading="lazy" decoding="async"
                                     style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
                             </div>
                         </div>
@@ -328,6 +353,7 @@
                             </div>
                             <div class="details-image" style="margin-top: 2rem;">
                                 <img src="assets/gate automation.jpg" alt="Automatic Gate" class="service-img"
+                                    loading="lazy" decoding="async"
                                     style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
                             </div>
                         </div>
@@ -600,7 +626,7 @@
                             </div>
                             <div class="details-image" style="margin-top: 2rem;">
                                 <img src="assets/sprinkler automation.png" alt="Smart Sprinkler System"
-                                    class="service-img"
+                                    class="service-img" loading="lazy" decoding="async"
                                     style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
                             </div>
                         </div>
@@ -665,6 +691,64 @@
     <!-- Clients Section -->
     <section id="clients" class="section clients">
         <div class="container">
+            <h2 class="section-title text-center reveal-bottom" style="margin-bottom: 2rem;">Brands <span
+                    class="accent">Provided</span></h2>
+
+            <div class="carousel-container reveal-bottom" style="margin-bottom: 5rem;">
+                <div class="brands-track">
+                    <div class="client-logo">TP-Link</div>
+                    <div class="client-logo">Samsung</div>
+                    <div class="client-logo">EZVIZ</div>
+                    <div class="client-logo">Panasonic</div>
+                    <div class="client-logo">Legrand</div>
+                    <div class="client-logo">Fibaro</div>
+                    <div class="client-logo">Hogar</div>
+                    <div class="client-logo">eGlu</div>
+                    <div class="client-logo">Tuya Smart</div>
+                    <div class="client-logo">KNX</div>
+                    <div class="client-logo">Yale</div>
+                    <div class="client-logo">Tyco</div>
+                    <div class="client-logo">Tenda</div>
+                    <div class="client-logo">Sophos</div>
+                    <div class="client-logo">Fortinet</div>
+                    <div class="client-logo">Cisco</div>
+                    <div class="client-logo">Somfy</div>
+                    <div class="client-logo">Bosch</div>
+                    <div class="client-logo">ABB</div>
+                    <div class="client-logo">Ajax</div>
+                    <div class="client-logo">D-Link</div>
+                    <div class="client-logo">Schneider Electric</div>
+                    <div class="client-logo">Betgear</div>
+                    <div class="client-logo">Hikvision</div>
+
+                    <!-- Duplicate for seamless loop -->
+                    <div class="client-logo">TP-Link</div>
+                    <div class="client-logo">Samsung</div>
+                    <div class="client-logo">EZVIZ</div>
+                    <div class="client-logo">Panasonic</div>
+                    <div class="client-logo">Legrand</div>
+                    <div class="client-logo">Fibaro</div>
+                    <div class="client-logo">Hogar</div>
+                    <div class="client-logo">eGlu</div>
+                    <div class="client-logo">Tuya Smart</div>
+                    <div class="client-logo">KNX</div>
+                    <div class="client-logo">Yale</div>
+                    <div class="client-logo">Tyco</div>
+                    <div class="client-logo">Tenda</div>
+                    <div class="client-logo">Sophos</div>
+                    <div class="client-logo">Fortinet</div>
+                    <div class="client-logo">Cisco</div>
+                    <div class="client-logo">Somfy</div>
+                    <div class="client-logo">Bosch</div>
+                    <div class="client-logo">ABB</div>
+                    <div class="client-logo">Ajax</div>
+                    <div class="client-logo">D-Link</div>
+                    <div class="client-logo">Schneider Electric</div>
+                    <div class="client-logo">Betgear</div>
+                    <div class="client-logo">Hikvision</div>
+                </div>
+            </div>
+
             <h2 class="section-title text-center reveal-bottom">Trusted by <span class="accent">Industry Leaders</span>
             </h2>
 

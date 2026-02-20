@@ -8,18 +8,58 @@
     --glass-bg: rgba(20, 20, 20, 0.6);
     --glass-border: rgba(255, 255, 255, 0.1);
     --glass-blur: 20px;
+    /* Reduced if used, but largely unused now */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
-    /* Fallback to Space Grotesk in HTML import but Inter is cleaner for body */
     --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+/* Hardware Acceleration Class */
+.gpu-accelerated {
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+html,
+body {
+    scroll-behavior: auto !important;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+}
+
+html.lenis {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth body {
+    overflow: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
 
 /* Reset & Base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
@@ -81,6 +121,10 @@ h6 {
     padding: 6rem 0;
     position: relative;
     overflow: hidden;
+    transform: translateZ(0);
+    /* Force GPU */
+    contain: layout paint;
+    /* Optimize rendering performance */
 }
 
 .text-center {
@@ -110,11 +154,14 @@ h6 {
     letter-spacing: 0.05em;
     border-radius: 50px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
     font-size: 0.9rem;
     position: relative;
     overflow: hidden;
     z-index: 1;
+    will-change: transform;
+    /* Optimized */
+    transform: translateZ(0);
 }
 
 .btn-primary {
@@ -125,7 +172,8 @@ h6 {
 }
 
 .btn-primary:hover {
-    box-shadow: 0 0 40px var(--primary-glow);
+    box-shadow: 0 0 30px var(--primary-glow);
+    /* Slightly reduced spread for performance */
     transform: translateY(-2px);
 }
 
@@ -140,20 +188,24 @@ h6 {
     border-color: var(--text-light);
 }
 
-/* Glassmorphism */
+/* Glassmorphism optimized */
 .glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(var(--glass-blur));
-    -webkit-backdrop-filter: blur(var(--glass-blur));
+    background: rgba(20, 20, 20, 0.85);
+    /* Increased opacity, removed backdrop-filter */
     border: 1px solid var(--glass-border);
     border-radius: 16px;
-    transition: var(--transition);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, background-color 0.4s ease;
+    will-change: transform;
+    transform: translateZ(0);
+    /* Force GPU layer */
 }
 
 .glass-card:hover {
     border-color: rgba(255, 45, 45, 0.3);
-    background: rgba(30, 30, 30, 0.6);
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+    background: rgba(30, 30, 30, 0.95);
+    /* box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5); Expensive */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    /* Optimized */
     transform: translateY(-5px);
 }
 
@@ -165,14 +217,16 @@ h6 {
     width: 100%;
     padding: 1.5rem 0;
     z-index: 1000;
-    transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding-top 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding-bottom 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), backdrop-filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transform: translateZ(0);
+    /* Hardware acceleration */
+    will-change: transform, background-color;
+    /* Optimized */
 }
 
 .navbar.scrolled {
-    background: rgba(5, 5, 5, 0.85);
-    /* Light background on scroll */
-    backdrop-filter: blur(20px);
-    padding: 1rem 0;
+    background: rgba(5, 5, 5, 0.9);
+    /* No padding change for stability */
     border-bottom: 1px solid var(--glass-border);
 }
 
@@ -185,6 +239,11 @@ h6 {
 .logo {
     display: flex;
     align-items: center;
+}
+
+.navbar .logo {
+    margin-left: -110px;
+    /* Shifted 20px right from -130px */
 }
 
 .logo img {
@@ -539,14 +598,17 @@ h6 {
     padding: 3rem 2.5rem;
     position: relative;
     overflow: hidden;
-    background: rgba(20, 20, 20, 0.6);
+    background: rgba(20, 20, 20, 0.9);
+    /* Opaque for performance */
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     box-shadow:
         0 10px 30px -10px rgba(0, 0, 0, 0.3),
         inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease, background-color 0.4s ease;
     z-index: 1;
+    will-change: transform;
+    /* Removed backdrop-filter */
 }
 
 /* Premium Glow Effect */
@@ -561,7 +623,9 @@ h6 {
     opacity: 0.5;
     transition: opacity 0.5s ease, transform 0.5s ease;
     z-index: -1;
-    filter: blur(40px);
+    /* filter: blur(40px); Removed for scroll performance */
+    box-shadow: 0 0 60px 20px var(--primary-glow);
+    /* Cheaper alternative */
 }
 
 .service-card::after {
@@ -576,11 +640,12 @@ h6 {
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-8px) translateZ(0);
+    /* slightly less movement, hardware accelerated */
     background: #111111;
-    box-shadow:
-        0 20px 40px -10px rgba(0, 0, 0, 0.1),
-        0 0 0 1px rgba(255, 45, 45, 0.1);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+    /* simpler shadow */
+    border-color: rgba(255, 45, 45, 0.2);
 }
 
 .service-card:hover::before {
@@ -947,7 +1012,7 @@ h6 {
 
 @keyframes scrollMouse {
     0% {
-        transform: translate(-50%, 0);
+        transform: translate3d(-50%, 0, 0);
         opacity: 0;
     }
 
@@ -956,7 +1021,7 @@ h6 {
     }
 
     100% {
-        transform: translate(-50%, 15px);
+        transform: translate3d(-50%, 15px, 0);
         opacity: 0;
     }
 }
@@ -972,33 +1037,43 @@ h6 {
 }
 
 /* Scroll Animations CSS */
+/* Scroll Animations CSS */
 .fade-in-up {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translate3d(0, 30px, 0);
+    /* GPU */
     transition: opacity 0.8s ease, transform 0.8s ease;
+    will-change: opacity, transform;
 }
 
 .reveal-left {
     opacity: 0;
-    transform: translateX(-50px);
-    transition: all 0.8s ease;
+    transform: translate3d(-50px, 0, 0);
+    /* GPU */
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .reveal-right {
     opacity: 0;
-    transform: translateX(50px);
-    transition: all 0.8s ease;
+    transform: translate3d(50px, 0, 0);
+    /* GPU */
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .reveal-bottom {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
+    transform: translate3d(0, 50px, 0);
+    /* GPU */
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
 }
 
 .active-reveal {
     opacity: 1;
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0) !important;
+    /* GPU */
 }
 
 /* Mobile Responsive */
@@ -1556,11 +1631,11 @@ h6 {
     font-size: 1.2rem;
     cursor: pointer;
     z-index: 20;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    backdrop-filter: blur(5px);
+    /* Removed backdrop-filter for performance */
 }
 
 .carousel-btn:hover {
@@ -1588,3 +1663,75 @@ h6 {
         right: 0;
     }
 }
+
+/* ========================= */
+/* CINEMATIC PARALLAX SCENE */
+/* ========================= */
+
+.parallax-scene {
+    height: 140vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #050505;
+}
+
+/* Background image */
+.parallax-bg {
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background: url("assets/smarthomeauto.png") center center / cover no-repeat;
+    z-index: 1;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    /* Force Hardware Acceleration */
+}
+
+/* Dark overlay */
+.parallax-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+/* Content container */
+.parallax-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* Camera image */
+.parallax-camera {
+    width: 380px;
+    margin-bottom: 30px;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+    /* Force Hardware Acceleration */
+}
+
+/* Title */
+.parallax-title {
+    font-size: 52px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+/* Subtitle */
+.parallax-subtitle {
+    font-size: 20px;
+    color: #bbb;
+}
+.brands-track { display: flex; width: calc(200px * 48); animation: scrollBrands 40s linear infinite; }
+@keyframes scrollBrands { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-200px * 24)); } }

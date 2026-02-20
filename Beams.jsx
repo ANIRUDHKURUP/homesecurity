@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unknown-property */
-import { forwardRef, useImperativeHandle, useEffect, useRef, useMemo } from 'react';
+import { forwardRef, useImperativeHandle, useEffect, useRef, useMemo, useState } from 'react';
 
 import * as THREE from 'three';
 
@@ -50,11 +50,29 @@ function extendMaterial(BaseMaterial, cfg) {
     return mat;
 }
 
-const CanvasWrapper = ({ children }) => (
-    <Canvas dpr={[1, 2]} frameloop="always" className="beams-container">
-        {children}
-    </Canvas>
-);
+const CanvasWrapper = ({ children }) => {
+    const containerRef = useRef(null);
+    const [visible, setVisible] = useState(true);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(([entry]) => {
+            setVisible(entry.isIntersecting);
+        }, { threshold: 0 });
+
+        if (containerRef.current) observer.observe(containerRef.current);
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <div ref={containerRef} style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
+            <Canvas dpr={[1, 1.5]} frameloop={visible ? "always" : "never"} className="beams-container">
+                {children}
+            </Canvas>
+        </div>
+    );
+};
+
+// ... (abbreviated for tool use, but I need to target the specific lines)
 
 const hexToNormalizedRGB = hex => {
     const clean = hex.replace('#', '');
@@ -274,7 +292,7 @@ const MergedPlanes = forwardRef(({ material, width, count, height }, ref) => {
     const mesh = useRef(null);
     useImperativeHandle(ref, () => mesh.current);
     const geometry = useMemo(
-        () => createStackedPlanesBufferGeometry(count, width, height, 0, 100),
+        () => createStackedPlanesBufferGeometry(count, width, height, 0, 60),
         [count, width, height]
     );
     useFrame((_, delta) => {
