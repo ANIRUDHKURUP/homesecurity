@@ -3,10 +3,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar Scroll Effect
-    // Navbar Scroll Effect
-    const navbar = document.querySelector('.navbar');
-    const logoImg = document.getElementById('nav-logo-img');
-
     // Navbar Scroll Effect - Handled via GSAP in main.jsx for stability with Lenis
 
     // Mobile Menu Toggle
