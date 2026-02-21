@@ -1206,20 +1206,33 @@ h6 {
 
     /* --- Hero Section --- */
     .hero {
+        align-items: flex-start;
         justify-content: center;
-        padding-top: 100px;
+        padding-top: 90px;
     }
 
     .hero-content {
         text-align: center;
         margin: 0 auto;
         max-width: 100%;
+        padding-top: 1.5rem;
     }
 
     .hero-title {
         font-size: 2.4rem;
-        line-height: 1.15;
-        justify-content: center;
+        line-height: 1.2;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    /* "New Era of" and changing text stay on same visual group,
+       but changing text wraps cleanly below on mobile */
+    #changing-text {
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-top: 0.1rem;
     }
 
     .hero-description {
@@ -1409,8 +1422,25 @@ h6 {
    SMALL MOBILE (≤ 480px)
    ========================================== */
 @media (max-width: 480px) {
+    .hero {
+        align-items: flex-start;
+        padding-top: 80px;
+    }
+
+    .hero-content {
+        padding-top: 1rem;
+    }
+
     .hero-title {
         font-size: 2rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #changing-text {
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 
     .hero-description {
