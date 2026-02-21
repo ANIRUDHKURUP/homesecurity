@@ -100,6 +100,9 @@ const lenis = new Lenis({
     wheelMultiplier: 1.15, // Slightly increased responsiveness
 });
 
+// Expose globally so modal can pause/resume scroll
+window.__lenis = lenis;
+
 // Sync Lenis scroll with GSAP ScrollTrigger
 lenis.on("scroll", ScrollTrigger.update);
 

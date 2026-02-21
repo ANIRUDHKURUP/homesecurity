@@ -79,6 +79,11 @@ function toggleServiceDetails(cardId, detailsId) {
         void modal.offsetWidth;
         modal.classList.add('active');
 
+        // Pause Lenis so scroll only happens inside modal
+        if (window.__lenis) {
+            window.__lenis.stop();
+        }
+
         // Prevent layout shift only if not already handled
         if (document.body.style.overflow !== 'hidden') {
             const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
@@ -110,6 +115,10 @@ function closeServiceModal() {
             if (navbar) {
                 navbar.style.paddingRight = '';
             }
+            // Resume Lenis smooth scroll
+            if (window.__lenis) {
+                window.__lenis.start();
+            }
             window.modalCloseTimer = null;
         }, 500); // Wait for transition
     }
@@ -136,6 +145,7 @@ function toggleCurtainDetails() { toggleServiceDetails('curtain-card', 'curtain-
 function toggleShutterDetails() { toggleServiceDetails('shutter-card', 'shutter-details'); }
 function toggleBoomBarrierDetails() { toggleServiceDetails('boom-barrier-card', 'boom-barrier-details'); }
 function toggleSprinklerDetails() { toggleServiceDetails('sprinkler-card', 'sprinkler-details'); }
+function toggleMultiroomAudioDetails() { toggleServiceDetails('multiroom-audio-card', 'multiroom-audio-details'); }
 
 // Expose to window
 if (typeof window !== 'undefined') {
@@ -153,6 +163,7 @@ if (typeof window !== 'undefined') {
     window.toggleShutterDetails = toggleShutterDetails;
     window.toggleBoomBarrierDetails = toggleBoomBarrierDetails;
     window.toggleSprinklerDetails = toggleSprinklerDetails;
+    window.toggleMultiroomAudioDetails = toggleMultiroomAudioDetails;
 }
 
 /* Testimonials Carousel Logic */

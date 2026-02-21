@@ -633,9 +633,52 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="service-card glass-card reveal-bottom" style="transition-delay: 1300ms;"
+                    id="multiroom-audio-card" onclick="toggleMultiroomAudioDetails()">
+                    <div class="card-content">
+                        <div class="icon-box">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3>Multiroom Audio System</h3>
+                        <p>Music that moves with you — play, sync, and control audio across every room from your phone.
+                        </p>
+                    </div>
+                    <div class="service-details" id="multiroom-audio-details"
+                        style="display: none; grid-column: 1 / -1;">
+                        <div class="details-grid"
+                            style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
+                            <div class="details-text">
+                                <h4>Music That Moves With You</h4>
+                                <p>Let your entire home echo with music, vibrant and clear. Play different music in
+                                    every room, or sync them all together with just a tap — control it all from your
+                                    phone.</p>
+
+                                <h4>Every Room, Your Way</h4>
+                                <p>Experience music like never before, no matter where you are in your home. Set the
+                                    mood in your living room, keep it calm in the bedroom, and energise your workout
+                                    space — all at once.</p>
+
+                                <h4>Seamless Phone Control</h4>
+                                <p>Full control at your fingertips. Adjust volume, switch tracks, or sync all rooms
+                                    instantly through a single intuitive app — no remotes, no hassle.</p>
+
+                                <button class="btn btn-secondary"
+                                    onclick="event.stopPropagation(); toggleMultiroomAudioDetails()"
+                                    style="margin-top: 1rem;">Back</button>
+                            </div>
+                            <div class="details-image" style="margin-top: 2rem;">
+                                <img src="/assets/multiroomaudiosystem.png" alt="Multiroom Audio System"
+                                    class="service-img" loading="lazy" decoding="async"
+                                    style="height: 100%; object-fit: cover; border-radius: 12px; margin: 0;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
 
     <!-- Solutions Section -->
     <section id="solutions" class="section solutions">
@@ -653,21 +696,23 @@
                         proactively identifies and neutralizes threats before they happen.</p>
                     <ul class="solution-features">
                         <li><i class="fas fa-check"></i> Facial Recognition</li>
-                        <li><i class="fas fa-check"></i> License Plate Reading</li>
+                        <li><i class="fas fa-check"></i> Intrusion Detection</li>
                         <li><i class="fas fa-check"></i> Automated Lockdown</li>
                     </ul>
                 </div>
-                <div class="solution-image"
-                    style="min-height: 400px; display: flex; align-items: center; justify-content: center; position: relative;">
-                    <!-- Interactive Camera (Moved from Hero) -->
-                    <div class="hero-camera"
-                        style="position: relative; top: auto; right: auto; transform: none; display: block; width: 100%; height: 100%;">
+                <div class="solution-image">
+                    <!-- Interactive Camera (Desktop only) -->
+                    <div class="hero-camera camera-desktop-only"
+                        style="position: relative; top: auto; right: auto; transform: none; width: 100%; height: 100%;">
                         <div class="camera-mount">
                             <img src="/assets/cbase.png" class="camera-base" alt="Camera Base">
                             <img src="/assets/chead.png" class="camera-head" id="camera-head" alt="Camera Head">
                         </div>
                     </div>
+                    <!-- Mobile replacement image (hidden on desktop, shown on mobile via CSS) -->
+                    <img src="/assets/replace.png" class="camera-mobile-replace" alt="Security Camera">
                 </div>
+
             </div>
 
             <!-- Solution 2 -->
@@ -1012,8 +1057,8 @@
     <script type="module" src="/main.jsx"></script>
 
     <!-- Service Modal Popup -->
-    <div id="service-modal" class="modal">
-        <div class="modal-content">
+    <div id="service-modal" class="modal" data-lenis-prevent>
+        <div class="modal-content" data-lenis-prevent>
             <span class="close-modal" onclick="closeServiceModal()">&times;</span>
             <div id="modal-body-content">
                 <!-- Content injected via JS -->

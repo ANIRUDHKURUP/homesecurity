@@ -1092,6 +1092,15 @@ h6 {
     transition: 0.3s;
 }
 
+/* ── Camera swap: base defaults (desktop shows camera, hides replace image) ── */
+.camera-mobile-replace {
+    display: none;
+}
+
+.camera-desktop-only {
+    display: block;
+}
+
 /* ==========================================
    TABLET (≤ 992px)
    ========================================== */
@@ -1411,12 +1420,23 @@ h6 {
         margin: 2rem auto 0;
     }
 
-    /* --- Camera Interaction Section --- */
-    .hero-camera {
-        max-width: 280px;
-        height: 280px;
+    /* --- Camera: hide animation, show replacement image on mobile --- */
+    .camera-desktop-only {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    .camera-mobile-replace {
+        display: block !important;
+        width: 100%;
+        height: auto;
+        border-radius: 16px;
+        border: 1px solid var(--glass-border);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        object-fit: cover;
     }
 }
+
 
 /* ==========================================
    SMALL MOBILE (≤ 480px)
@@ -1723,7 +1743,7 @@ h6 {
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
@@ -1747,7 +1767,6 @@ h6 {
     border: none;
     width: 90%;
     max-width: 1000px;
-    /* Slightly wider */
     position: relative;
     border-radius: 24px;
     box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.15);
@@ -1755,9 +1774,30 @@ h6 {
     opacity: 0;
     transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     max-height: 85vh;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
     display: flex;
     flex-direction: column;
+    /* Custom scrollbar for modal */
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 45, 45, 0.5) rgba(255, 255, 255, 0.05);
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: rgba(255, 45, 45, 0.5);
+    border-radius: 10px;
 }
 
 .modal.active .modal-content {
